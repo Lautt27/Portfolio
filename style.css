@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+body.dark {
+    background-color: #121212;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+body.dark header {
+    background-color: #1A1A1A;
+    border-bottom: 1px solid #000000;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: invert(1);
+}
+
+body.dark .logo {
+    filter: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark nav ul li a {
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.switch {
+    background-color: #3a3a3a;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 30px; 
+    padding: 5px;
+    outline: none;
+    margin-left: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #f1f1f1;
+    top: 50%;
+    left: -1px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 0px 5px rgba(0,0,0);
+}
+
+.switch.active {
+    background-color: #ffffff;
+}
+
+.switch.active::after {
+    transform: translateY(-50%) translateX(31px);
+    background: #ffffff;
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;   
+    color: #fff;
+}
+
+.switch.active span {
+    color: #000000;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        justify-content: center;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav ul {
+        display: none;
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    body.dark nav ul {
+        background-color: #1A1A1A;
+        height: 10em;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    body.dark .menu-toggle {
+        color: #ddd;
+    }
+}
+
+/* About Me */
+
+.aboutme {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.aboutme h2 {
+    margin-bottom: 10px;
+}
+
+.aboutme img {
+    width: 220px;
+    height: 220px;
+    margin-top: 1em;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.aboutme img:hover {
+    transform: scale(1.1);
+}
+
+.aboutme .desc {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #333;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.aboutme .desc .highlight {
+    color: #007bff;
+}
+
+body.dark .aboutme .desc {
+    color: #ddd;
+}
+
+.aboutme:hover .desc {
+    max-height: 80px;
+    opacity: 1;
+}
+
+.download-btn button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 4em;
+}
+
+.download-btn button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Projects */
+
+.projects {
+    text-align: center;
+    background-color: #f7f7f7;
+    margin-bottom: 4em;
+}
+
+body.dark .projects {
+    background-color: #121212;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+body.dark p,
+body.dark h1,
+body.dark h2 {
+    color: #fff;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.project {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(33.333% - 40px);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+
+body.dark .project {
+    background-color: #1d1d1d;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.projects-container .fa-github {
+    font-size: 2rem;
+    color: #000;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+body.dark .projects-container .fa-github {
+    color: #fff;
+}
+
+.projects-container .fa-github:hover {
+    transform: scale(1.2);
+    color: #007bff;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.studies {
+    background-color: #f7f7f7;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+body.dark .studies {
+    background-color: #121212;
+}
+
+.studies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.study-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+body.dark .study-item {
+    background-color: #1d1d1d;
+}
+
+.study-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.study-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.study-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.technologies {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: left;
+}
+
+.technologies i {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+body.dark .technologies i {
+    color: #ddd;
+}
+
+body.dark .technologies i:hover,
+.technologies i:hover {
+    color: #007bff;
+}
+
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+body.dark .footer {
+    background-color: #1A1A1A;
+}
+
+.socialIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-title {
+    margin-bottom: 10px;
+}
+
+.contact-title h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icons a {
+    color: #000000;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.dark .icons a {
+    color: #ddd;
+}
+
+body.dark .icons a:hover,
+.icons a:hover {
+    color: #007bff;
+}
+
+.footer::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #444;
+    margin-bottom: 20px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: #bbb;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
