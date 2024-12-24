@@ -121,7 +121,7 @@ nav ul li a:hover {
     transform: translateY(-50%);
     border-radius: 50%;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 0px 5px rgba(0,0,0);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0);
 }
 
 .switch.active {
@@ -170,18 +170,20 @@ nav ul li a:hover {
     nav ul {
         display: none;
         gap: 15px;
-        flex-direction: column;
+        flex-direction: wrap;
         align-items: center;
         background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         position: absolute;
         top: 60px;
+        justify-content: center;
         right: 0;
         width: 100%;
+        height: 4em;
     }
 
     body.dark nav ul {
         background-color: #1A1A1A;
-        height: 10em;
     }
 
     nav ul li a {
@@ -196,6 +198,10 @@ nav ul li a:hover {
     body.dark .menu-toggle {
         color: #ddd;
     }
+
+    nav ul.active {
+        display: flex;
+    }
 }
 
 /* About Me */
@@ -204,16 +210,17 @@ nav ul li a:hover {
     text-align: center;
     margin-top: 20px;
     position: relative;
+    z-index: 2;
 }
 
-.aboutme h2 {
-    margin-bottom: 10px;
+.aboutme h1, .aboutme .desc, .download-btn {
+    z-index: 3;
 }
 
+/* Estilo de la imagen */
 .aboutme img {
     width: 220px;
     height: 220px;
-    margin-top: 1em;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s ease;
@@ -246,7 +253,7 @@ body.dark .aboutme .desc {
 }
 
 .aboutme:hover .desc {
-    max-height: 80px;
+    max-height: 8em;
     opacity: 1;
 }
 
@@ -266,6 +273,38 @@ body.dark .aboutme .desc {
     background-color: #0056b3;
 }
 
+/* Estrellas */
+.star {
+    position: absolute;
+    top: -10px;
+    width: 3px;
+    height: 3px;
+    background: #007bff62;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: animStar var(--duration) linear infinite;
+}
+
+@keyframes animStar {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(75vh);
+        opacity: 1;
+    }
+}
+
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
 
 /* Projects */
 
@@ -326,7 +365,6 @@ body.dark h2 {
     box-sizing: border-box;
 }
 
-
 body.dark .project {
     background-color: #1d1d1d;
 }
@@ -342,19 +380,36 @@ body.dark .project {
     margin-bottom: 20px;
 }
 
-.projects-container .fa-github {
+.projects-container .web a {
     font-size: 2rem;
     color: #000;
     transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
 }
 
-body.dark .projects-container .fa-github {
+body.dark .projects-container .web a {
     color: #fff;
 }
 
-.projects-container .fa-github:hover {
+body.dark .projects-container .web a:hover,
+.projects-container .web a:hover {
     transform: scale(1.2);
     color: #007bff;
+}
+
+@media screen and (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .project {
+        flex: 1 1 100%;   
+        max-width: 22em;
+    }
 }
 
 p {
@@ -443,6 +498,7 @@ body.dark .technologies i:hover,
 
 body.dark .footer {
     background-color: #1A1A1A;
+    border-top: 1px solid #353535;
 }
 
 .socialIcons {
@@ -459,6 +515,10 @@ body.dark .footer {
 .contact-title h4 {
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+body.dark .contact-title h4 {
+    color: #ddd;
 }
 
 .icons {
@@ -501,4 +561,40 @@ body.dark .icons a:hover,
 
 .footer-bottom p {
     margin: 0;
+}
+
+.rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.raindrop {
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    animation: fall linear infinite, sway ease-in-out infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
 }

@@ -6,8 +6,11 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/55ab9a7e05.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="assets/img/gglogo.png" type="image/png">
 </head>
 <body>
+
+    <div class="rain-container"></div>
 
     <header>
         <div class="logo-container">
@@ -18,7 +21,7 @@
                 <li><a href="#aboutme">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#studies">Studies</a></li>
-                <li><a href="#studies">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="menu-toggle" id="menu-toggle">
@@ -41,7 +44,8 @@
         <a href="assets/cv/resume.pdf" class="download-btn" download>
             <button><i class="fa-solid fa-circle-down"></i> Download My Resume</button>
         </a>
-    </section>    
+    </section>
+    
 
     <section class="projects" id="projects">
         <h2>Projects</h2>
@@ -50,21 +54,30 @@
                 <img src="assets/projects/pro1.png" alt="Project 1 Image" class="project-image">
                 <h3>M&M Multimedia</h3>
                 <p>A web project that uses HTML, PHP, and Bootstrap to create an interactive application.</p>
-                <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
+                <div class="web">
+                    <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-solid fa-globe"></i></a>
+                </div>
             </div>
     
             <div class="project">
                 <img src="assets/projects/pro2.png" alt="Project 2 Image" class="project-image">
                 <h3>Teatro Opera</h3>
                 <p>This is a project where I update the website of Teatro Opera using HTML, PHP, JavaScript, and CSS.</p>
-                <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
+                <div class="web">
+                    <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-solid fa-globe"></i></a>
+                </div>
             </div>
 
             <div class="project">
                 <img src="assets/projects/pro1.png" alt="Project 1 Image" class="project-image">
                 <h3>M&M Multimedia</h3>
                 <p>A web project that uses HTML, PHP, and Bootstrap to create an interactive application.</p>
-                <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
+                <div class="web">
+                    <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-solid fa-globe"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -116,7 +129,7 @@
     <footer class="footer">
         <div class="footer-column">
           <div class="socialIcons">
-            <div class="contact-title">
+            <div class="contact-title" id="contact">
               <h4>Contact Me!</h4>
             </div>
             <div class="icons">
@@ -134,6 +147,7 @@
     </footer>
       
     <script src="scripts.js"></script>
+    <script src="rain.js"></script>
 
 </body>
 </html>

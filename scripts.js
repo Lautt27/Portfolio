@@ -24,10 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    const navMenu = document.querySelector('nav ul');
-    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            navMenu.classList.remove("active");
+            navMenu.style.display = "flex";
+        } else {
+            navMenu.style.display = "";
+        }
+    });
 });
+
+
 
 const btnSwitch = document.querySelector('#switch');
 
