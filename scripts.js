@@ -124,7 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".aboutme h1").textContent = translations[language].aboutMe.title;
         document.querySelector(".desc").textContent = translations[language].aboutMe.description;
         document.querySelector(".download-btn button").innerHTML = `<i class="fa-solid fa-circle-down"></i> ${translations[language].aboutMe.resume}`;
-        document.getElementById("download-resume").href = language === "en" ? "assets/cv/resume.pdf" : "assets/cv/cv.pdf";
+        
+        document.getElementById("download-resume").href = language === "en" ? "assets/resume/resume.pdf" : "assets/resume/cv.pdf";
+    
         document.querySelector(".projects h2").textContent = translations[language].projects.title;
         const projectItems = document.querySelectorAll(".project");
         projectItems[0].querySelector("h3").textContent = translations[language].projects.project1.title;
