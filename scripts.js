@@ -79,9 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             projects: {
                 title: "Projects",
-                project1: { title: "M&M Multimedia", description: "A web project that uses HTML, PHP, and Bootstrap to create an interactive application." },
-                project2: { title: "Teatro Opera", description: "This is a project where I update the website of Teatro Opera using HTML, PHP, JavaScript, and CSS." },
-                project3: { title: "Placeholder Project", description: "An additional example project to showcase skills and creativity." },
+                project1: { title: "Portfolio", description: "An additional example project to showcase skills and creativity." },
+                project2: { title: "M&M Multimedia", description: "A web project that uses HTML, PHP, and Bootstrap to create an interactive application." },
+                project3: { title: "Teatro Opera", description: "This is a project where I update the website of Teatro Opera using HTML, PHP, JavaScript, and CSS." },
             },
             studies: {
                 title: "Studies and Courses",
@@ -101,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             projects: {
                 title: "Proyectos",
-                project1: { title: "M&M Multimedia", description: "Un proyecto web que utiliza HTML, PHP y Bootstrap para crear una aplicación interactiva." },
-                project2: { title: "Teatro Opera", description: "Este es un proyecto donde actualicé el sitio web del Teatro Opera usando HTML, PHP, JavaScript y CSS." },
-                project3: { title: "Proyecto de Ejemplo", description: "Un proyecto adicional para mostrar habilidades y creatividad." },
+                project1: { title: "Portafolio", description: "Un proyecto adicional para mostrar habilidades y creatividad." },
+                project2: { title: "M&M Multimedia", description: "Un proyecto web que utiliza HTML, PHP y Bootstrap para crear una aplicación interactiva." },
+                project3: { title: "Teatro Opera", description: "Este es un proyecto donde actualicé el sitio web del Teatro Opera usando HTML, PHP, JavaScript y CSS." },
             },
             studies: {
                 title: "Estudios y Cursos",
