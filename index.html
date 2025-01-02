@@ -24,8 +24,8 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="menu-toggle">
-            <i class="fa fa-bars"></i>
+        <div class="language-switch">
+            <button id="language-toggle">EN/ES</button>
         </div>
         <div class="switch-container">
             <button class="switch" id="switch">
@@ -33,6 +33,10 @@
                 <span><i class="fa-solid fa-moon"></i></span>
             </button>
         </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+        
     </header>
     
     <section class="aboutme" id="aboutme">
@@ -41,11 +45,10 @@
         <p class="desc">
             Hello! I'm <span class="highlight">Lautaro Casal</span>, a web developer who loves programming and creating interactive and engaging applications. Below, you will see the projects I have done so far. Enjoy it!
         </p>
-        <a href="assets/cv/resume.pdf" class="download-btn" download>
+        <a href="assets/cv/resume.pdf" class="download-btn" download id="download-resume">
             <button><i class="fa-solid fa-circle-down"></i> Download My Resume</button>
         </a>
-    </section>
-    
+    </section>    
 
     <section class="projects" id="projects">
         <h2>Projects</h2>
@@ -56,7 +59,6 @@
                 <p>A web project that uses HTML, PHP, and Bootstrap to create an interactive application.</p>
                 <div class="web">
                     <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-solid fa-globe"></i></a>
                 </div>
             </div>
     
@@ -66,7 +68,6 @@
                 <p>This is a project where I update the website of Teatro Opera using HTML, PHP, JavaScript, and CSS.</p>
                 <div class="web">
                     <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-solid fa-globe"></i></a>
                 </div>
             </div>
 
@@ -76,7 +77,6 @@
                 <p>A web project that uses HTML, PHP, and Bootstrap to create an interactive application.</p>
                 <div class="web">
                     <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-solid fa-globe"></i></a>
                 </div>
             </div>
         </div>
@@ -86,13 +86,17 @@
         <h2>Studies and Courses</h2>
         <div class="studies-container">
             <div class="study-item">
-                <h3>??</h3>
-                <p>??</p>
+                <h3>Web design course with WordPress</h3>
+                <p>I will learn to create and develop websites, integrating them with social media to enhance advertising campaigns using WordPress.</p>
                 <span>2025 - Present | National Technological University of Buenos Aires</span>
+                <div class="technologies">
+                    <i class="fa-brands fa-wordpress"></i>
+                    <i class="fa-solid fa-database"></i>
+                </div>
             </div>
             <div class="study-item">
                 <h3>Higher Technician in Programming</h3>
-                <p>An online course that covers fundamental concepts of programming and algorithms.</p>
+                <p>A tertiary program focused on programming and algorithms, covering the principles of software design and development.</p>
                 <span>2024 - Present | Teclab Higher Technical Institute</span>
                 <div class="technologies">
                     <i class="fab fa-html5"></i>

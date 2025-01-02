@@ -92,6 +92,28 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
+
+.language-switch {
+    display: inline-block;
+    margin-left: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#language-toggle {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#language-toggle:hover {
+    background-color: #ddd;
+}
+
+
 .switch {
     background-color: #3a3a3a;
     border-radius: 1000px;
@@ -150,6 +172,7 @@ nav ul li a:hover {
     display: none;
     cursor: pointer;
     font-size: 24px;
+    margin-left: 1em;
 }
 
 @media screen and (max-width: 768px) {
