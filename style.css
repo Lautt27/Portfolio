@@ -262,6 +262,7 @@ body.dark #gear-btn {
 
     body {
         margin-top: 1.5em; 
+        overflow-x: hidden;
     }
 
     header {
