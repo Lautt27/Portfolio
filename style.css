@@ -81,6 +81,8 @@ nav ul li a {
     padding: 10px 20px;
     border-radius: 30px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;   
 }
 
 body.dark nav ul li a {
@@ -257,6 +259,11 @@ body.dark #gear-btn {
 }
 
 @media screen and (max-width: 768px) {
+
+    body {
+        margin-top: 1.5em; 
+    }
+
     header {
         padding: 10px 20px;
         justify-content: space-between;
@@ -273,7 +280,7 @@ body.dark #gear-btn {
 
     nav ul {
         display: none;
-        gap: 15px;
+        gap: 1px;
         flex-direction: wrap;
         align-items: center;
         background-color: #ffffff;
@@ -292,7 +299,7 @@ body.dark #gear-btn {
 
     nav ul li a {
         font-size: 14px;
-        padding: 8px 16px;
+        padding: 12px;
     }
 
     .menu-toggle {
