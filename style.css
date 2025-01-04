@@ -17,6 +17,8 @@ body.dark {
     background-color: #121212;
 }
 
+/* Header */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -94,7 +96,7 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
-/* Gear */
+/* Gear & Switchs */
 
 .gear-container {
     position: relative;
@@ -256,68 +258,6 @@ body.dark #gear-btn {
     cursor: pointer;
     font-size: 24px;
     margin-left: 1em;
-}
-
-@media screen and (max-width: 768px) {
-
-    body {
-        margin-top: 1.5em; 
-        overflow-x: hidden;
-    }
-
-    header {
-        padding: 10px 20px;
-        justify-content: space-between;
-    }
-
-    h1 {
-        padding: 10px;
-    }
-
-    .logo-container {
-        justify-content: center;
-    }
-
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    nav ul {
-        display: none;
-        gap: 1px;
-        flex-direction: wrap;
-        align-items: center;
-        background-color: #ffffff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        top: 60px;
-        justify-content: center;
-        right: 0;
-        width: 100%;
-        height: 4em;
-    }
-
-    body.dark nav ul {
-        background-color: #1A1A1A;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-        padding: 12px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    body.dark .menu-toggle {
-        color: #ddd;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
 }
 
 /* About Me */
@@ -515,24 +455,13 @@ body.dark .projects-container .web a:hover,
     color: #007bff;
 }
 
-@media screen and (max-width: 768px) {
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1em;
-    }
-
-    .project {
-        flex: 1 1 100%;   
-        max-width: 22em;
-    }
-}
-
 p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 20px;
 }
+
+/* Estudios */
 
 .studies {
     background-color: #f7f7f7;
@@ -604,6 +533,8 @@ body.dark .technologies i:hover,
 .technologies i:hover {
     color: #007bff;
 }
+
+/* Footer */
 
 .footer {
     background-color: #ffffff;
@@ -712,5 +643,80 @@ body.dark .icons a:hover,
     }
     50% {
         transform: translateX(5px);
+    }
+}
+
+/* Pantallas pequeñas */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        margin-top: 1.5em; 
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    h1 {
+        padding: 10px;
+    }
+
+    .logo-container {
+        justify-content: center;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav ul {
+        display: none;
+        gap: 1px;
+        flex-direction: wrap;
+        align-items: center;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 60px;
+        justify-content: center;
+        right: 0;
+        width: 100%;
+        height: 4em;
+    }
+
+    body.dark nav ul {
+        background-color: #1A1A1A;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    body.dark .menu-toggle {
+        color: #ddd;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .project {
+        flex: 1 1 100%;   
+        max-width: 22em;
     }
 }
