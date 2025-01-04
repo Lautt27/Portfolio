@@ -270,6 +270,10 @@ body.dark #gear-btn {
         justify-content: space-between;
     }
 
+    h1 {
+        padding: 10px;
+    }
+
     .logo-container {
         justify-content: center;
     }
