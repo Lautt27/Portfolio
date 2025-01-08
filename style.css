@@ -279,10 +279,6 @@ body.dark .settings-menu {
     font-weight: bold;
 }
 
-.aboutme .desc .highlight {
-    color: #007bff;
-}
-
 body.dark .aboutme .desc {
     color: #ddd;
 }
