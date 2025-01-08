@@ -112,7 +112,6 @@ nav ul li a:hover {
 
 #gear-btn:hover {
     transform: rotate(90deg);
-    color: #007BFF; /* Azul más profesional */
 }
 
 body.dark #gear-btn {
@@ -192,7 +191,7 @@ body.dark .settings-menu {
     width: 60px;
     height: 30px;
     padding: 5px;
-    border-radius: 50px;
+    border-radius: 100px;
     outline: none;
     margin: 0 auto;
     transition: background-color 0.3s ease;
@@ -216,7 +215,7 @@ body.dark .settings-menu {
   
   .switch.active {
     background-color: #303030;
-    color: #ffffff;
+    color: #007BFF;
   }
   
   .switch.active::after {
@@ -230,6 +229,7 @@ body.dark .settings-menu {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #007BFF;
   }
   
 .menu-toggle {
