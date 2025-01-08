@@ -96,8 +96,7 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
-/* Gear & Switchs */
-
+/* Gear Container */
 .gear-container {
     position: relative;
 }
@@ -107,93 +106,83 @@ nav ul li a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    color: #000;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#gear-btn:hover {
+    transform: rotate(90deg);
+    color: #007BFF; /* Azul más profesional */
 }
 
 body.dark #gear-btn {
     color: #ffffff;
 }
 
-@keyframes slideDown {
-    from {
-        transform: translateY(-20%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-20%);
-        opacity: 0;
-    }
-}
-
+/* Settings Menu */
 .settings-menu {
     display: none;
-    position: fixed;
-    top: 5em;
+    position: absolute;
+    top: 3em;
     right: 1em;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+body.dark .settings-menu {
+    background-color: #161616;
 }
 
 .settings-menu.active {
     display: flex;
-    animation: slideDown 0.3s ease forwards;
-}
-
-.settings-menu .language-switch,
-.settings-menu .switch-container {
-    margin-bottom: 10px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .settings-menu button {
-    background: none;
-    border: none;
-    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
     cursor: pointer;
-    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .settings-menu button:hover {
-    background-color: #f0f0f0;
+    background-color: #007BFF;
+    color: #ffffff;
 }
 
 .language-switch {
     display: inline-block;
-    margin-left: 10px;
-    background-color: #fff;
-    border-radius: 5px;
+    width: 100%;
+    text-align: center;
 }
 
+/* Language Toggle */
 #language-toggle {
-    background-color: transparent;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     color: #333;
-    padding: 5px 10px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #language-toggle:hover {
-    background-color: #ddd;
+    background-color: #007BFF;
+    color: #ffffff;
 }
 
+/* Switch */
 .switch {
-    border-radius: 100px;
     border: none;
     position: relative;
     cursor: pointer;
@@ -201,58 +190,48 @@ body.dark #gear-btn {
     align-items: center;
     justify-content: space-between;
     width: 60px;
-    height: 30px; 
+    height: 30px;
     padding: 5px;
+    border-radius: 50px;
     outline: none;
-    margin-left: 20px;
+    margin: 0 auto;
     transition: background-color 0.3s ease;
-}
-
-.switch::after {
+    background-color: #f0f0f0;
+  }
+  
+  .switch::after {
     content: "";
     display: block;
     width: 30px;
     height: 30px;
     position: absolute;
-    background: #ffffff;
     top: 50%;
-    left: -1px;
+    left: 0;
     transform: translateY(-50%);
+    background: #ffffff;
     border-radius: 50%;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0);
-}
-
-.switch.active {
-    background-color: #000;
-}
-
-.switch.active::after {
-    transform: translateY(-50%) translateX(31px);
-}
-
-.switch span {
+    transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), background-color 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .switch.active {
+    background-color: #303030;
+    color: #ffffff;
+  }
+  
+  .switch.active::after {
+    transform: translateY(-50%) translateX(30px) scale(1.1);
+    background-color: #ffffff;
+  }
+  
+  .switch span {
     width: 30px;
     height: 30px;
-    line-height: 30px;
-    display: block;
-    background: none;   
-    color: #000000;
-}
-
-.switch.active span:first-child {
-    color: #ffffff;
-}
-
-.switch span:last-child {
-    transform: translateX(5px);
-}
-
-.switch.active span:last-child {
-    color: #000000;
-    transform: translateX(0);
-}
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -695,6 +674,10 @@ body.dark .icons a:hover,
     nav ul li a {
         font-size: 14px;
         padding: 12px;
+    }
+
+    .settings-menu {
+        margin-right: -4em;
     }
 
     .menu-toggle {
