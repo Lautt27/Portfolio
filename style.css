@@ -182,18 +182,14 @@ body.dark .settings-menu {
 
 /* Switch */
 .switch {
-    border: none;
     position: relative;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 60px;
     height: 30px;
     padding: 5px;
     border-radius: 100px;
-    outline: none;
-    margin: 0 auto;
     transition: background-color 0.3s ease;
     background-color: #f0f0f0;
   }
